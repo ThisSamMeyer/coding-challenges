@@ -15,5 +15,5 @@
 
 <h2>Lessons Learned:</h2>
 <p>I think the biggest lesson I have learned from tackling these challenges is the value of stepping away and coming back with a fresh perspective. The amount of hours I have spent banging my head against a challenge I couldn't quite get right only to have the solution come to me right after I walk away to relax and do something else is not a number I wish to admit to. 
-<br>Other than the greater life lessons of patience and letting things go, I find that looking at how others went about tackling a challenge and comparing it to my own method is extremely valuable and shows you ways to solve problems that I may not have thought to try.</p>
+<br>Other than the greater life lessons of patience and letting things go, I find that looking at how others went about tackling a challenge and comparing it to my own method is extremely valuable and has taught me different ways to solve problems that I may not have thought to try.</p>
 
