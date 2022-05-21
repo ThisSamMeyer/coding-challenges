@@ -8,7 +8,7 @@
 <h4> And a touch of willpower </h4>
 
 <p>I find that starting the day with a coding challenge is the perfect way to stretch those precious critical thinking skills.
-<br>(and gives me something to obcess over for the rest of the day if I've stretched a little too far)</p>
+<br>(and gives me something to obsess over for the rest of the day if I've stretched a little too far)</p>
 
 <h2>Optimizations</h2>
 <p>What a bland journey this life would be if one did not learn new things - and often - if we are lucky. As I learn new techniques from my own experience, watching and working with others, walking down the street as a moment of random inspiration strikes... I always like to go back and revisit old solutions to compare how I did it then with how I might do it now. As I learn and grow, I like to refactor and redesign my past solutions for clarity, efficiency, or just for the fun of trying it a new way.</p>
