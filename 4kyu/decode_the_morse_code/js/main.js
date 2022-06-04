@@ -32,52 +32,52 @@
 // All the test strings would be valid to the point that they could be reliably decoded as described above, so you may skip checking for errors and exceptions, just do your best in figuring out what the message is!
 
 var decodeBits = function(bits){
-    while(bits[0] === '0'){
-      bits = bits.slice(1);
-    }
-    while(bits[bits.length - 1] === '0') {
-      bits = bits.slice(0,-1)
-    }
-    let unit = bits.split('0')
-        .filter(set => set.length)
-        .map(ele => ele.length)
-        .reduce((pv,cv) => cv < pv ? cv : pv)
-    if (bits.indexOf('0') !== -1) {
-        let minZeros = bits.split('1')
-            .filter(set => set.length)
-            .map(ele => ele.length)
-            .reduce((pv,cv) => cv < pv ? cv : pv)
-        unit = Math.min(unit,minZeros)
-    }
-    return bits.split('0'.repeat(unit * 7))
-      .map(word => word.split('0'.repeat(unit * 3))
-        .map(char => char.split('0'.repeat(unit))
-          .map(ele => ele == '1'.repeat(unit * 3) ? '-' : '.')
-        .join(''))
-      .join(' '))
-    .join('   ')
+  while(bits[0] === '0'){
+    bits = bits.slice(1);
+  }
+  while(bits[bits.length - 1] === '0') {
+    bits = bits.slice(0,-1);
+  }
+  let unit = bits.split('0')
+    .filter(set => set.length)
+    .map(ele => ele.length)
+    .reduce((pv,cv) => cv < pv ? cv : pv)
+  if (bits.indexOf('0') !== -1) {
+    let minZeros = bits.split('1')
+      .filter(set => set.length)
+      .map(ele => ele.length)
+      .reduce((pv,cv) => cv < pv ? cv : pv)
+    unit = Math.min(unit,minZeros)
+  }
+  return bits.split('0'.repeat(unit * 7))
+    .map(word => word.split('0'.repeat(unit * 3))
+      .map(char => char.split('0'.repeat(unit))
+        .map(ele => ele == '1'.repeat(unit * 3) ? '-' : '.')
+      .join(''))
+    .join(' '))
+  .join('   ')
 }
-  
-var decodeMorse = function(morseCode){
-    const codes = {
-        "-----":"0", ".----":"1", "..---":"2", "...--":"3", "....-":"4",
-        ".....":"5", "-....":"6", "--...":"7", "---..":"8", "----.":"9",
-        ".-":"A", "-...":"B", "-.-.":"C", "-..":"D", ".":"E", "..-.":"F",
-        "--.":"G", "....":"H", "..":"I", ".---":"J", "-.-":"K", ".-..":"L",
-        "--":"M", "-.":"N", "---":"O", ".--.":"P", "--.-":"Q", ".-.":"R",
-        "...":"S", "-":"T", "..-":"U", "...-":"V", ".--":"W", "-..-":"X",
-        "-.--":"Y", "--..":"Z", "-.-.--":"!", ".-.-.-":".", "--..--":",", 
-        "···−−−···":"SOS"
-    }
 
-    return morseCode
-        .split('   ')
-        .map( word => word
-            .split(' ')
-            .map(char => codes[char])
-            .join('') )
-        .join(' ')
-        .trim()
+var decodeMorse = function(morseCode){
+  const codes = {
+    "-----":"0", ".----":"1", "..---":"2", "...--":"3", "....-":"4",
+    ".....":"5", "-....":"6", "--...":"7", "---..":"8", "----.":"9",
+    ".-":"A", "-...":"B", "-.-.":"C", "-..":"D", ".":"E", "..-.":"F",
+    "--.":"G", "....":"H", "..":"I", ".---":"J", "-.-":"K", ".-..":"L",
+    "--":"M", "-.":"N", "---":"O", ".--.":"P", "--.-":"Q", ".-.":"R",
+    "...":"S", "-":"T", "..-":"U", "...-":"V", ".--":"W", "-..-":"X",
+    "-.--":"Y", "--..":"Z", "-.-.--":"!", ".-.-.-":".", "--..--":",", 
+    "···−−−···":"SOS"
+  }
+
+  return morseCode
+    .split('   ')
+    .map( word => word
+      .split(' ')
+      .map(char => codes[char])
+      .join('') )
+    .join(' ')
+  .trim()
 }
 
 console.log(decodeMorse(decodeBits('1100110011001100000011000000111111001100111111001111110000000000000011001111110011111100111111000000110011001111110000001111110011001100000011')))
